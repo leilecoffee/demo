@@ -24,11 +24,11 @@ spring:
     maxOpenPreparedStatements: 20
   #邮箱配置
   mail:
-    host: smtp.163.com
+    host: smtp.qq.com
     port: 25
-    username: fiscocc@163.com
-    password: fiscocc123456
-    nick: Fisco-cc
+    username: 1056196129@qq.com
+    password: afimeijvkfplbcdd
+    nick: 测试
     protocol: smtp
     defaultEncoding: UTF-8
     properties:

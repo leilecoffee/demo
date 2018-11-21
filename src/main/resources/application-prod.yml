@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    name: fiscocc-pf
+    url: jdbc:mysql://10.13.41.4:3306/fcc_pf?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: fcc_pf
+    password: 9fv@yy3mMCPX
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 200
+    initialSize: 20
+    maxWait: 10000
+    minIdle: 20
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: fiscocc@163.com
+    password: fiscocc123456
+    nick: FiscoCC
+    protocol: smtp
+    defaultEncoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+        starttls:
+          enable: true
+          required: true
+  redis:
+    host: 10.13.41.5
+    port: 6379
+    password: FkBOVJAgPqMe0sW4ajcg
+onbc:
+  evidence:
+    url: http://10.12.41.12:24451/fiscocc-onbc/evidence
+logging:
+  path: /var/logs/pf

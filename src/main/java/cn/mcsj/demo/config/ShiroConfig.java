@@ -143,7 +143,7 @@ public class ShiroConfig {
 	 */
 	@Bean
 	public ShiroFilterFactoryBean getShiroFilterFactoryBean() {
-		Map<String, String> filterChainDefinitionMap = new HashMap<>();
+		Map<String, String> filterChainDefinitionMap = new HashMap<String, String>();
 		ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
 		Map<String, Filter> filters = new LinkedHashMap<String, Filter>();
 		filters.put("unAuth", new UnAuthFilter());

@@ -59,6 +59,7 @@ public class ShiroConfig {
 
 	/**
 	 * 实例化redis的sessionDao
+	 * 
 	 * @return
 	 */
 	@Bean
@@ -70,6 +71,7 @@ public class ShiroConfig {
 
 	/**
 	 * 设置redis为shiro的session管理器和缓存管理
+	 * 
 	 * @return
 	 */
 	@Bean
@@ -139,6 +141,7 @@ public class ShiroConfig {
 
 	/**
 	 * 设置shiro的资源访问拦截策略
+	 * 
 	 * @return
 	 */
 	@Bean
@@ -151,14 +154,7 @@ public class ShiroConfig {
 		shiroFilterFactoryBean.setFilters(filters);
 		shiroFilterFactoryBean.setSecurityManager(securityManager());
 		// anon表示不拦截
-		filterChainDefinitionMap.put("/api/user/login", "anon");
-		// 图片验证码接口
-		filterChainDefinitionMap.put("/api/vcode/**", "anon");
-		filterChainDefinitionMap.put("/api/user/mail/**", "anon");
-		filterChainDefinitionMap.put("/api/user/register", "anon");
-		filterChainDefinitionMap.put("/api/bussiness/**", "anon");
-		filterChainDefinitionMap.put("/api/user/forget/**", "anon");
-		filterChainDefinitionMap.put("/api/file/**", "anon");
+		filterChainDefinitionMap.put("/login", "anon");
 		filterChainDefinitionMap.put("/**", "unAuth,relogin,authc");
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 		return shiroFilterFactoryBean;

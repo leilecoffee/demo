@@ -27,4 +27,17 @@ public class GlobalConstant {
 	public static final String ROLE_OR_PERMISSION_CHANGED = "relogin";
 
 	public static final int SHIRO_CACHE_EXPIRETIME = 1800;
+
+	public static final String PAGE_START = "_start";
+
+	public static final String PAGE_SIZE = "_pageSize";
+
+	public static final String LOGIN_IMAGE_CODE = "login_image_code";
+
+	public static final String REGISTER_IMAGE_CODE = "register_image_code";
+
+	public static final String REGISTER_EMAIL_CODE = "register_email_code";
+
+	public static final Long ROOT_NODE_ID = 0L;
+
 }

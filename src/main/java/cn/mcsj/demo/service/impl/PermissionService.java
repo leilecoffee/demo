@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.mcsj.demo.constant.PageConstant;
+import cn.mcsj.demo.constant.GlobalConstant;
 import cn.mcsj.demo.dao.PermissionDao;
 import cn.mcsj.demo.dao.RolePermissionDao;
 import cn.mcsj.demo.dao.UserRoleDao;
@@ -44,8 +44,8 @@ public class PermissionService implements IPermissionService {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public PageBean page(PageBean page, Map whereMap) {
-		whereMap.put(PageConstant.PAGE_START, page.getStart());
-		whereMap.put(PageConstant.PAGE_SIZE, page.getPageSize());
+		whereMap.put(GlobalConstant.PAGE_START, page.getStart());
+		whereMap.put(GlobalConstant.PAGE_SIZE, page.getPageSize());
 		int total = permissionDao.total(whereMap);
 		List<Permission> rows = new ArrayList<Permission>();
 		if (total > 0) {

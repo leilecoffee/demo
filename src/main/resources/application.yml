@@ -15,29 +15,10 @@ spring:
     #不要为资源文件建立映射
   resources:
     add-mappings: false
+  executor:
+    corePoolSize: 20
+    maxPoolSize: 80
+    queueCapacity: 100
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   typeAliasesPackage: cn.mcsj.demo.entity
-#请求上链次数
-chain:
-  count:
-    limit: 10
-  evidence:
-    appId: IDA1EQRG
-#数据库查询条数
-select:
-#定时检查线程不退出，查找前几天数据
-  chainTime: 5
-#每次sleep 30毫秒，控制异步速度
-  internalSleepTime: 30
-  count:
-    limit: 200
-#定时任务启动间隔
-schedule:
-  time: 0 0/1 * * * ?
-#Thread配置
-my: 
-  corePoolSize: 500
-  maxPoolSize: 1000
-  queueCapacity: 500
-  keepAlive: 60

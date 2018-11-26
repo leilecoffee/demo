@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.mcsj.demo.constant.PageConstant;
+import cn.mcsj.demo.constant.GlobalConstant;
 import cn.mcsj.demo.dao.UserDao;
 import cn.mcsj.demo.dto.base.PageBean;
 import cn.mcsj.demo.entity.User;
@@ -39,8 +39,8 @@ public class UserService implements IUserService {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public PageBean page(PageBean page, Map whereMap) {
-		whereMap.put(PageConstant.PAGE_START, page.getStart());
-		whereMap.put(PageConstant.PAGE_SIZE, page.getPageSize());
+		whereMap.put(GlobalConstant.PAGE_START, page.getStart());
+		whereMap.put(GlobalConstant.PAGE_SIZE, page.getPageSize());
 		int total = userDao.total(whereMap);
 		List<User> rows = new ArrayList<User>();
 		if (total > 0) {

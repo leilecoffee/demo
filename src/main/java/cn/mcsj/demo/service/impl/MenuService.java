@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.mcsj.demo.constant.PageConstant;
+import cn.mcsj.demo.constant.GlobalConstant;
 import cn.mcsj.demo.dao.MenuDao;
 import cn.mcsj.demo.dto.base.PageBean;
 import cn.mcsj.demo.entity.Menu;
@@ -35,8 +35,8 @@ public class MenuService implements IMenuService {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public PageBean page(PageBean page, Map whereMap) {
-		whereMap.put(PageConstant.PAGE_START, page.getStart());
-		whereMap.put(PageConstant.PAGE_SIZE, page.getPageSize());
+		whereMap.put(GlobalConstant.PAGE_START, page.getStart());
+		whereMap.put(GlobalConstant.PAGE_SIZE, page.getPageSize());
 		int total = menuDao.total(whereMap);
 		List<Menu> rows = new ArrayList<Menu>();
 		if (total > 0) {

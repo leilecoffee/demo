@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.mcsj.demo.constant.PageConstant;
+import cn.mcsj.demo.constant.GlobalConstant;
 import cn.mcsj.demo.dao.RoleMenuDao;
 import cn.mcsj.demo.dto.base.PageBean;
 import cn.mcsj.demo.entity.RoleMenu;
@@ -38,8 +38,8 @@ public class RoleMenuService implements IRoleMenuService {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public PageBean page(PageBean page, Map whereMap) {
-		whereMap.put(PageConstant.PAGE_START, page.getStart());
-		whereMap.put(PageConstant.PAGE_SIZE, page.getPageSize());
+		whereMap.put(GlobalConstant.PAGE_START, page.getStart());
+		whereMap.put(GlobalConstant.PAGE_SIZE, page.getPageSize());
 		int total = roleMenuDao.total(whereMap);
 		List<RoleMenu> rows = new ArrayList<RoleMenu>();
 		if (total > 0) {
